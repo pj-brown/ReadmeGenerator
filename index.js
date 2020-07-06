@@ -32,12 +32,12 @@ return inquirer.prompt([
     },
     {
       type: "input",
-      name: "contribution",
+      name: "license",
       message: "Select your license type."
     },
     {
       type: "input",
-      name: "test-instructions",
+      name: "testInstructions",
       message: "How do you run your application?"
     },
     {
@@ -57,8 +57,8 @@ promptUser()
   .then(function(answers) {
     return writeFileAsync(
         "README.md",
-        `${answers.title}`
-        );
+        `${answers.title}\n${answers.description}\n${answers.installation}\n${answers.usage}\n${answers.license}\n${answers.testInstructions}\n${answers.github}\n${answers.email}`
+    );
   })
   .catch(function(err) {
     console.log(err);
