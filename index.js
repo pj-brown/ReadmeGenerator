@@ -57,7 +57,7 @@ promptUser()
   .then(function(answers) {
     return writeFileAsync(
         "README.md",
-        `# ${answers.title}\n### Description\n${answers.description}\n### Table of Contents\n### Installation${answers.installation}\n### Usage\n${answers.usage}\n#### License\n${answers.license}\n### Contributing\n### Tests\n${answers.testInstructions}\n### Questions${answers.github}\n${answers.email}`
+        `# ${answers.title}\n\n### Description\n\n${answers.description}\n\n### Table of Contents\n\n### Installation${answers.installation}\n\n### Usage\n\n${answers.usage}\n\n#### License\n\n${answers.license}\n\n### Contributing\n\n### Tests\n\n${answers.testInstructions}\n\n### Questions\n[My GitHub Profile](https://github.com/${answers.github})\n\nEmail: ${answers.email}`
     );
   })
   .catch(function(err) {
