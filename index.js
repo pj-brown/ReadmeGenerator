@@ -55,7 +55,10 @@ return inquirer.prompt([
 
 promptUser()
   .then(function(answers) {
-
+    return writeFileAsync(
+        "README.md",
+        `${answers.title}`
+        );
   })
   .catch(function(err) {
     console.log(err);
