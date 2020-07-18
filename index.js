@@ -55,9 +55,39 @@ return inquirer.prompt([
 
 promptUser()
   .then(function(answers) {
-    return writeFileAsync(
-        "README.md",
-        `# ${answers.title}\n\n### Description\n\n${answers.description}\n\n### Table of Contents\n\n### Installation${answers.installation}\n\n### Usage\n\n${answers.usage}\n\n#### License\n\n${answers.license}\n\n### Contributing\n\n### Tests\n\n${answers.testInstructions}\n\n### Questions\n[My GitHub Profile](https://github.com/${answers.github})\n\nEmail: ${answers.email}`
+  return writeFileAsync(
+"README.md",
+`# ${answers.title}
+## Description
+---
+${answers.description}
+## Table of Contents
+---
+* <a href='#installation'>Installation</a>
+* <a href='#usage'>Usage</a>
+* <a href='#license'>License</a>
+* <a href='#contribution'>Contribution</a>
+* <a href='#tests'>Tests</a>
+* <a href='#questions'>Questions</a>
+## Installation
+---
+${answers.installation}
+## Usage
+---
+${answers.usage}
+## License
+---
+${answers.license}
+## Contributing
+---
+## Tests
+---
+${answers.testInstructions}
+## Questions
+---
+#### For any questions, please contact me using one of the following links:
+[My GitHub Profile](https://github.com/${answers.github})\n
+[Send me an email!](${answers.email})`
     );
   })
   .catch(function(err) {
