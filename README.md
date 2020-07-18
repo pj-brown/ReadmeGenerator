@@ -2,6 +2,10 @@
 [![MIT](https://img.shields.io/badge/license-MIT-brightgreen)](https://choosealicense.com/licenses/mit/)
 ## Description
 This is a simple command-line application utilizing the Inquirer package in the Nodejs environment to generate simple, clean README markdown files.
+
+![README Generator Demo](assets/demo.gif)
+#### [Link to video demo](https://drive.google.com/file/d/1Vv1i1Suk_1xXno7NEySPy2-BxLXCT6rh/view)
+
 ## Table of Contents
 * <a href='#installation'>Installation</a>
 * <a href='#usage'>Usage</a>
