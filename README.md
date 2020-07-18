@@ -16,7 +16,7 @@ This application is used to generate simple, clean README.md files.
 ## License
 This application is using the MIT license.
 ## Contributing
-
+Please refer to the <a href='#questions'>Questions</a> section for any questions related to contributing.
 ## Tests
 Open the directory containing `index.js` and run `node index.js` in your Node terminal.
 ## Questions
