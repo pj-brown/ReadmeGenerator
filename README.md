@@ -1,7 +1,7 @@
 # README Generator
 [![MIT](https://img.shields.io/badge/license-MIT-brightgreen)](https://choosealicense.com/licenses/mit/)
 ## Description
-This is a simple command-line application utilizing the Inquirer package in the Nodejs environment.
+This is a simple command-line application utilizing the Inquirer package in the Nodejs environment to generate simple, clean README markdown files.
 ## Table of Contents
 * <a href='#installation'>Installation</a>
 * <a href='#usage'>Usage</a>
@@ -12,7 +12,7 @@ This is a simple command-line application utilizing the Inquirer package in the 
 ## Installation
 Clone this repository. Then, open the directory containing `index.js` in your Node terminal and run `npm install`.
 ## Usage
-This application is used to generate simple, clean README.md files.
+Used to create a README.md
 ## License
 This application is using the MIT license.
 ## Contributing
