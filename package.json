@@ -1,14 +1,24 @@
 {
   "name": "readmegenerator",
   "version": "1.0.0",
-  "description": "",
+  "description": "Handy dandy README genny",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pj-brown/ReadmeGenerator.git"
+  },
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pj-brown/ReadmeGenerator/issues"
+  },
+  "homepage": "https://github.com/pj-brown/ReadmeGenerator#readme",
   "dependencies": {
-    "inquirer": "^7.3.0"
+    "fs": "0.0.1-security",
+    "index.js": "0.0.3",
+    "inquirer": "^7.3.2"
   }
 }

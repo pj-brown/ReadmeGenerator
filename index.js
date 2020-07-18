@@ -1,18 +1,13 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const util = require("util");
-
 const writeFileAsync = util.promisify(fs.writeFile);
 
 function promptUser() {
 return inquirer.prompt([
     {
-      // the input type the user will interact with
-      // input -> regular text
       type: "input",
-      // key to be referenced inside the callback function inside the promise
       name: "title",
-      // message to render to the user
       message: "What is the name of your application?"
     },
     {
@@ -31,9 +26,10 @@ return inquirer.prompt([
       message: "Describe the use of your application."
     },
     {
-      type: "input",
+      type: "list",
       name: "license",
-      message: "Select your license type."
+      message: "Select your license type.",
+      choices: ["MIT", "Apache 2.0", "GNU AGPLv3"]
     },
     {
       type: "input",
@@ -53,16 +49,24 @@ return inquirer.prompt([
   ]);
 }
 
+// ["MIT", "Apache 2.0", "GNU AGPLv3"]
+
 promptUser()
-  .then(function(answers) {
+  .then(answers => {
+    if (answers.license = "MIT") {
+      answers.badge = "[![MIT](https://img.shields.io/badge/license-MIT-brightgreen)](https://choosealicense.com/licenses/mit/)";
+    } else if (answers.license = "Apache 2.0") {
+      answers.badge = "[![Apache 2.0](https://img.shields.io/badge/license-Apache%202.0-orange)](https://choosealicense.com/licenses/apache-2.0/)";
+    } else {
+      answers.badge = "[![GNU AGPLv3](https://img.shields.io/badge/license-GNU%20AGPLv3-blue)](https://choosealicense.com/licenses/agpl-3.0/)";
+    };
   return writeFileAsync(
 "README.md",
 `# ${answers.title}
+${answers.badge}
 ## Description
----
 ${answers.description}
 ## Table of Contents
----
 * <a href='#installation'>Installation</a>
 * <a href='#usage'>Usage</a>
 * <a href='#license'>License</a>
@@ -70,26 +74,23 @@ ${answers.description}
 * <a href='#tests'>Tests</a>
 * <a href='#questions'>Questions</a>
 ## Installation
----
 ${answers.installation}
 ## Usage
----
 ${answers.usage}
 ## License
----
-${answers.license}
+This application is using the ${answers.license} license.
 ## Contributing
----
+
 ## Tests
----
 ${answers.testInstructions}
 ## Questions
----
-#### For any questions, please contact me using one of the following links:
-[My GitHub Profile](https://github.com/${answers.github})\n
-[Send me an email!](${answers.email})`
+  For any questions, please contact me using one of the following links:\n
+* [My GitHub Profile](https://github.com/${answers.github})\n
+* ${answers.email}`
     );
   })
-  .catch(function(err) {
+  .catch(err=> {
     console.log(err);
   });
+
+    
